@@ -1,2 +1,12 @@
 # Using-Bayesian-Modeling-Techniques-to-Predict-the-Counts-of-Bicycles-in-NYC
 Implementation of Poisson Regression with Lasso Regularization using Bayesian Modleing approach by setting Laplace Priors on Parameters and using JAGS to implement MCMC sampling.
+
+# Executive Summary:
+The motivation for this project is to incorporate Bayesian Perspective in modeling real world problems. Most of the linear models are used by assuming that our data follows a normal distribution and then we can use the Linear Regression to measure the relationship between certain variables. I had heard the term Poisson Regression and applied it on the count data by staright up taking the log of the Outcome variable because Exp() works as a link function in Poisson Regression. Usually when we apply Linear Regression what we do is that we think our response variable follows a Normal Distribution. But as explained here we can incorporate the idea of Generalized Linear Model by thinking that our response variable follows a Poisson Distribution as it would help us model the Counts data. Also, we all had learnt the term "Lasso Regression" during our basic Machine Learning courses where we know the penalty in lasso put most of the coefficient variables to zero, giving us the most important variables. So, i would also like to implement Lasso Regression by putting a Laplace Prior on the coefficients for Dependent Variables.
+So, the idea here is, that as we are putting a relatively strict prior of Laplace Distribution on the coefficients (As Laplace is a distribution peaked at 0, which means that most of the observations lie around zero. So, after the modeling we would look at the Posterior Distribution of the Coefficients of Dependent Variables and see which of them have a Posterior away from zero and which have remained at zero. As, through this we can figure out the important variables for Regression.
+
+# Dataset:
+I have used the data of daily bicycle counts in NYC bridge area for 10 months. The data was downloaded online. And the Precipitation, Max Temp and Min Temp of the day are given along with the date and Count.
+
+# Analysis Language:
+All the analysis was performed in R programming language. I used Jupyter Notebooks as i can report metrics easily here. The important Libraries have been loaded in the next step to help with our analysis and modeling. I have used JAGS implementation in R through "rjags" library to implement JAGS algorithm for MCMC.
